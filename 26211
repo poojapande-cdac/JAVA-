@@ -1,0 +1,44 @@
+﻿//Assignment 2 Inheritance. 
+
+
+// Define interface "A" with "disp1()" method.
+Derive from "A", interface "B" with "disp2" method.
+Derive class "C" , from "B".
+Instantiate class "C" and call its members as well as derived from parent interfaces.
+
+
+
+package inhertianceassig;
+interface A{
+        void disp1();
+}
+interface B extends A{
+         void disp2();
+}
+public class Interface1 implements B {
+
+
+        public static void main(String[] args) {
+                // TODO Auto-generated method stub
+ Interface1 m = new Interface1();
+ m.disp1();
+ m.disp2();
+ 
+        }
+
+
+        @Override
+        public void disp1() {
+                // TODO Auto-generated method stub
+                System.out.println("Hello");
+        }
+
+
+        @Override
+        public void disp2() {
+                // TODO Auto-generated method stub
+                System.out.println("Welcome");
+        }
+
+
+}

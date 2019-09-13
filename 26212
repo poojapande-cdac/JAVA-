@@ -1,0 +1,64 @@
+﻿//Assignment 2 Inheritance. 
+
+
+// Create a multi-level inheritance , instantiate the child class and observe constructor invocation.Also show, if needed, how will u invoke parent class constructor from child class ?
+
+
+
+package inhertianceassig;
+class Employee{  
+         static float salary=40000;
+
+
+        public Employee() {
+        
+                System.out.println("Salary:"+salary);
+        }
+         
+        }  
+        class Teamlead extends Employee{ 
+                int bonus =10000; 
+        
+        public Teamlead() {
+                System.out.println("Bonus:"+bonus);
+                }
+        }
+        class TeamMember extends Teamlead{
+            int overtimesalary=1000 ;
+
+
+                        public TeamMember(int overtimesalary) {
+                                super();
+                                this.overtimesalary = overtimesalary;
+                        }
+
+
+                                                
+                
+                        // TODO Auto-generated constructor stub
+                }
+                
+        
+
+
+
+
+public class Multilevel {
+
+
+        public static void main(String[] args) {
+
+
+                  TeamMember p1=new TeamMember(1000); 
+                         System.out.println(" Salary:"+p1.salary);  
+                           System.out.println("Bonus  is:"+p1.bonus);  
+                           System.out.println("OvertimeSalary  is:"+p1.overtimesalary);  
+
+
+                // TODO Auto-generated method stub
+
+
+        }
+
+
+}
