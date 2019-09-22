@@ -1,0 +1,54 @@
+/*1) accept as many as numbers from user till he presses "0"  and write these numbers in a file. Now Open a file and read these numbers. ( Hint :- use Scanner class for input, FileOutputStream, DataOutputStream, FileInputStream , DataInputStream)*/
+
+
+
+package fileshandlingassignment;
+
+import java.util.Scanner;
+import java.io.*;
+
+public class ClassFirst{
+	public static void writeData(File f){
+		int data;
+		Scanner sc = new Scanner(System.in);
+		try( FileOutputStream fos = new FileOutputStream(f) ){
+			try( DataOutputStream dos = new DataOutputStream(fos) ){
+				while(true){
+					data = sc.nextInt();
+					
+					if(data == 0){
+						break;
+					}
+					
+					dos.writeInt(data);
+					
+				}
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+	public static void readData(File f){
+		int len = ((int) f.length())/4;
+		try( FileInputStream fis = new FileInputStream(f) ){
+			try( DataInputStream dis = new DataInputStream(fis) ) {
+				for(int i = 0; i < len; i++){
+					System.out.println(dis.readInt());
+				}
+
+			}
+		}
+		catch(Exception e){
+			//e.printStackTrace();
+		}
+
+	}
+	public static void main(String args[]){
+		File f = new File("example.txt");
+		writeData(f);
+		readData(f);
+				
+	}
+}
