@@ -1,0 +1,45 @@
+/*2) create a HashMap.
+store  prn no. and students name of 10 students inside the HashMap.
+display it using iterator.*/
+
+
+
+package day6assignment;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.HashMap;
+
+
+public class Students {
+
+	public static void main(String[] args) 
+	{
+		Map<String,Integer> h = new HashMap<>();
+		h.put("john",19011);
+		h.put("tom",19014);
+		h.put("jane",19015);
+		h.put("todd",19016);
+		h.put("abc",19017);
+		h.put("xyz",19018);
+		h.put("amit",19019);
+		h.put("omkar",19020);
+		h.put("neha",19021);
+		h.put("Khush",19022);
+		// get a set of entries
+		Set<Entry<String,Integer>> set=h.entrySet();
+		// get an iterator
+		Iterator<Entry<String, Integer>> i=set.iterator();
+		// display elements
+		while(i.hasNext())
+		{
+			Map.Entry<String,Integer> me=(Entry<String,Integer>)i.next();
+			System.out.print(me.getKey()+ ":");
+			System.out.println(me.getValue());
+		}
+
+		// TODO Auto-generated method stub
+
+	}
+
+}
